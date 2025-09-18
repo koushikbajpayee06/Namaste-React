@@ -1,0 +1,23 @@
+{
+  "name": "react-rev",
+  "version": "1.0.0",
+  "description": "This is Namaste React By Koushik",
+  "homepage": "https://github.com/koushikbajpayee06/Namaste-React#readme",
+  "bugs": {
+    "url": "https://github.com/koushikbajpayee06/Namaste-React/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koushikbajpayee06/Namaste-React.git"
+  },
+  "license": "ISC",
+  "author": "Koushik",
+  "type": "commonjs",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  }
+}
