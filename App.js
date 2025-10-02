@@ -1,22 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom/client"
 
-const elem = <span>React Element</span>
-
-const Title= () => (
-    <h1 className="head">
-        {elem}
-        Namaste React Using JSX
-    </h1>
-)
-
-const HeadingComponent2 = ()=> (
-    <div id="container">
-        {Title()}
-        {/* <Title/> */}
-        <h1 className="heading">Namaste React</h1>    
-    </div>
-  
-);  
+const Header = () =>{
+    return (
+        <div className="header">
+            <div className="logo-container">
+                <img className="logo" src="https://s3.amazonaws.com/cdn.designcrowd.com/blog/39-Food-Delivery-Logos-That-Will-Leave-You-Hungry-For-More/food-delivery-logo-by-abhishek-choudhary-dribbble.jpg"/>
+            </div>
+            <div className="nav-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Conact Us</li>
+                    <li>Cart</li>
+                </ul>
+            </div>
+        </div>
+    )
+}
+const AppLayout = () =>{
+    return (
+        <div className="app">
+            <Header/>
+        </div>
+    )
+}
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<HeadingComponent2/>);
+root.render(<AppLayout/>);
