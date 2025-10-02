@@ -923,7 +923,6 @@ const Body = () =>{
                { resList.map((restaurant) =>(
                     <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
                 ))}
-
             </div>
         </div>
     )
