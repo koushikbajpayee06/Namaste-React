@@ -14,7 +14,7 @@
   "author": "Koushik",
   "type": "commonjs",
   "scripts": {
-"clean": "rm -rf dist .parcel-cache",
+  "clean": "rm -rf dist .parcel-cache",
     "start": "npm run clean && parcel index.html --no-cache",
     "build": "npm run clean && parcel build index.html",
     "test": "jest"
