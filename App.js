@@ -22,17 +22,18 @@ const Header = () =>{
     )
 }
 
-const RestaurantCard = ()=>{
+const RestaurantCard = (props)=>{
+    console.log(props);
     return(
         <div className="res-card" style={styleCard}>
             <img 
             className="res-logo"
              alt="res-logo"
-            src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/u3cvjhtaopd4akomga4v"/>
-            <h3>Koshe Kosha</h3>
-            <h4>Bengali,North Indian</h4>
-            <h4>4.7 stars</h4>
-            <h4>38 minutes</h4>
+            src={props.imgUrl}/>
+            <h3>{props.resName}</h3>
+            <h4>{props.cuisine}</h4>
+            <h4>{props.stars} stars</h4>
+            <h4>{props.deliveryTime} minutes</h4>
             
         </div>
     )
@@ -44,53 +45,26 @@ const Body = () =>{
                 Search
             </div>
             <div className="res-container">
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
+                <RestaurantCard resName="Koshe Kosha" cuisine="Bengali,North Indian" stars="4.7" deliveryTime="38" imgUrl="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/u3cvjhtaopd4akomga4v"/>
+                <RestaurantCard resName="KFC" cuisine="Burgers, Fast Food, Wraps" stars="4.3" deliveryTime="24" imgUrl="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/12/9/f96d6223-b318-4a20-b108-82a5de31556e_39309.JPG"/>
 
             </div>
         </div>
     )
+}
+
+const Footer = () => {
+    <p> 2025 Koushik. All rights reserved.</p>
 }
 const AppLayout = () =>{
     return (
         <div className="app">
             <Header/>
             <Body/>
+            <Footer/>
         </div>
     )
 }
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<AppLayout/>);
