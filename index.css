@@ -43,3 +43,16 @@
     padding: 5px;
     cursor: pointer;
 }
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+.shimmer-card{
+    height: 310px;
+    width: 400px;
+    background-color: #f0f0f0;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 20px;
+}

@@ -1,5 +1,6 @@
 import {  useState , useEffect} from "react";
 import RestaurantCard from "./RestaurantCard";
+import ShimmerUI from "./Shimmer";
 
 
 const Body = () =>{
@@ -29,7 +30,7 @@ const fetchData = async () => {
 };
 
 if(listOfRestaurants.length ===0){
-  return <h1>Loading.....</h1>
+  return <ShimmerUI/>
 }
 
 
