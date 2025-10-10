@@ -4,7 +4,8 @@ import { LOGO_URL } from "../utils/constants";
 
 const Header = () =>{
     // let btnName = "Login";
-    const [btnNameReact,setBtnNameReact] = useState("Login")
+    const [btnNameReact,setBtnNameReact] = useState("Login");
+    console.log(("Header rendered"));
     // const btnName = "Login";
     return (
         <div className="header">
@@ -19,7 +20,7 @@ const Header = () =>{
                     <li>Cart</li>
                     <button className="login-btn"
                      onClick={()=>{
-                        setBtnNameReact("Logout");
+                        btnNameReact==="Login"? setBtnNameReact("Logout"):setBtnNameReact("Login") ;
                      }} >{btnNameReact}</button>
                 </ul>
             </div>
