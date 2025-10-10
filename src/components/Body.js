@@ -30,7 +30,7 @@ const fetchData = async () => {
 };
 
 
-    return listOfRestaurants.length ===0 ? <ShimmerUI/>: (
+    return listOfRestaurants.length ===0 ? (<ShimmerUI/>): (
         <div className="body">
             <div className="filter">
                 <button className="filter-btn"
