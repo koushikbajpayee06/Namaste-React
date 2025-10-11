@@ -7,11 +7,11 @@ const Body = () =>{
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurants,setFilterRestaurents] = useState([]);
   const [searchText, setSearchText] = useState("");
-  console.log("Body rendered");
+  // console.log("Body rendered");
  
 
   useEffect(()=>{
-    console.log("useEffect called");
+    // console.log("useEffect called");
     fetchData();
   },[]);
 
@@ -27,7 +27,7 @@ const fetchData = async () => {
       (card) => card.card?.card?.id === "restaurant_grid_listing_v2"
     )?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
 
-  console.log("🍽️ Restaurant List:", restaurantList);
+  // console.log("🍽️ Restaurant List:", restaurantList);
 
   setListOfRestaurants(restaurantList);
   setFilterRestaurents(restaurantList);
