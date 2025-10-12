@@ -14,7 +14,7 @@
   "author": "Koushik",
   "type": "commonjs",
   "scripts": {
-  "clean": "rm -rf dist .parcel-cache",
+    "clean": "rm -rf dist .parcel-cache",
     "start": "npm run clean && parcel index.html --no-cache",
     "build": "npm run clean && parcel build index.html",
     "test": "jest"
@@ -24,10 +24,10 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.2"
   },
-  "browserslist":[
+  "browserslist": [
     "last 2 Chrome versions"
   ]
-    
 }
