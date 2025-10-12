@@ -1,6 +1,8 @@
 
 const Contact = ()=>{
     return (
-        <div></div>
+        <div>Contact Us Page</div>
     )
 }
+
+export default Contact;
