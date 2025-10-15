@@ -12,11 +12,20 @@ class UserClass extends React.Component{
     }
     render(){
         const {name,location} = this.props;
-
+        const {count} = this.state;
             return (
                 <div className="user-card">
-                    <h1>Count:{this.state.count}</h1>
-                    <h1>Count2:{this.state.count2}</h1>
+                    <h1>Count:{count}</h1>
+                    <button
+                     onClick={()=>{
+                        //NEVER UPDATE STATE VARIABLE DITECTLY
+                        this.setState(
+                        {
+                            count: this.state.count+1,
+                            count2:this.state.count2+1,
+                        });
+     
+                    }}>Increase Count</button>
                     <h2>{name}</h2>
                     <h3>{location}</h3>
                     <h3>Contact:@koushik6</h3>
