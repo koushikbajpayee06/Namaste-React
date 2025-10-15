@@ -1,5 +1,6 @@
 
 const User = ({name})=>{
+
     return (
         <div className="user-card">
             <h2>{name}</h2>
