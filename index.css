@@ -64,3 +64,7 @@
     display: flex;
     justify-content: space-between;
 }
+.user-card{
+    border: 1px solid black;
+    padding: 10px;
+}
