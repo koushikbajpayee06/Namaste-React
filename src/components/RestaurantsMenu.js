@@ -1,44 +1,38 @@
 import { useEffect, useState } from "react";
+import mockdata from '../utils/mockdata'
+import ShimmerUI from "./Shimmer.js";
 
-const RestaurantMenu = () => {
-  const [restaurants, setRestaurants] = useState([]);
-  const [menu, setMenu] = useState([]);
+const RestaurantMenu=()=>{
+  const [resInfo, setResInfo] =useState(null);
+  
+  useEffect(()=>{
+    fetchMenu();
+  },[]);
 
-  useEffect(() => {
-    fetch("http://localhost:5000/restaurants")
-      .then((res) => res.json())
-      .then((data) => {
-        const list = data?.data?.cards || [];
-        setRestaurants(list);
-      });
-  }, []);
-
-  const fetchMenu = async (id) => {
-    const res = await fetch(`http://localhost:5000/menu/${id}`);
-    const json = await res.json();
-    console.log(json);
-    setMenu(json?.data?.cards || []);
+  const fetchMenu = async ()=>{
+    const mockData = mockdata.data;
+    console.log(mockData)
+    setResInfo(mockData);
   };
+    
+  if (resInfo === null) {
+    return <ShimmerUI />;
+  }
+  const {name, cuisines, costForTwoMessage} = resInfo?.cards[2]?.card?.card?.info;
+  const itemCards = 
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card?.itemCards;
+  console.log(itemCards);
 
   return (
-    <div>
-      <h1>Restaurants</h1>
-      <ul>
-        {restaurants.map((r, index) => (
-          <li key={index} onClick={() => fetchMenu(r.data.id)}>
-            {r.data.name}
-          </li>
-        ))}
-      </ul>
-
+    <div className="menu">
+      <h1>{name}</h1>
+      <p>{cuisines.join(',')} - {costForTwoMessage}</p>
       <h2>Menu</h2>
       <ul>
-        {menu.map((item, index) => (
-          <li key={index}>{item?.card?.info?.name}</li>
-        ))}
+        {itemCards.map((item,id)=>(<li key={id}>{item.card.info.name} - Rs.{item.card.info.price/100}</li>))}
+
       </ul>
     </div>
   );
 };
-
 export default RestaurantMenu;
